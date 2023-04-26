@@ -31,12 +31,12 @@ def lidar_data(point_cloud, lidar_point_cloud_buffer):
 
 def generate_lidar_blueprint(blueprint_library):
     lidar_blueprint = blueprint_library.find('sensor.lidar.ray_cast')
-    lidar_blueprint.set_attribute('channels', str(32))
+    lidar_blueprint.set_attribute('channels', str(64))
     lidar_blueprint.set_attribute('points_per_second', str(500000))
     lidar_blueprint.set_attribute('rotation_frequency', str(50))
-    lidar_blueprint.set_attribute('range', str(20))
-    #write upper fov code here
-    #write lower fov code here
+    lidar_blueprint.set_attribute('range', str(100))
+    lidar_blueprint.set_attribute('upper_fov', str(15))
+    lidar_blueprint.set_attribute('lower_fov', str(-25))
     return lidar_blueprint
 
 
